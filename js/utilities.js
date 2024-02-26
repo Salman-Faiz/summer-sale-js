@@ -8,7 +8,7 @@ function getValue(elementId){
 
 function setValue(destinationId,FinalValue){
     const setValueString=document.getElementById(destinationId);
-    setValueString.innerText=FinalValue.toFixed(2);;
+    setValueString.innerText=FinalValue2digit=FinalValue;
 
     
 }
