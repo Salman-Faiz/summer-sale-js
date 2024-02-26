@@ -1,21 +1,23 @@
 // click events
 
 var total = 0;
-function onClickProducts(productId) {
+function onClickProducts(productName,productId) {
     const getValueFromProduct = getValue(productId);
-
+console.log(getValueFromProduct);
     total = total + getValueFromProduct;
     const total2digits=total.toFixed(2)
 
     setValue('totalPrice', total2digits);
 
     setValue('FinalTotal', total2digits);
+    addNewItems(productName,getValueFromProduct);
+    
 
 
     return total;
 }
 
-// apply button click
+//@@@@@@@@@@@@@@ apply button click///////////////////
 function applyBones(inputId) {
     const textValue = document.getElementById(inputId).value;
 
@@ -27,10 +29,12 @@ function applyBones(inputId) {
     const couponCode='SALE200';
     let textUpperValue= textValue.toString();
     let couponUpperCode=couponCode.toUpperCase();
+  
 
     if (textUpperValue === couponUpperCode) {
         const discountPrice=afterDiscountPrice.toFixed(2)
         setValue('FinalTotal', discountPrice);
+      
         // console.log('success', textValue)
 
     }
@@ -38,9 +42,15 @@ function applyBones(inputId) {
 
         setValue('totalPrice', beforeDiscountTotal);
     }
+   
 
 
 }
+// purchase button click.....*
+function purchaseDone(){
+    location.href('')
+}
+
 
 
 
